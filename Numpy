@@ -1,4 +1,5 @@
 import numpy as np
+from numpy.linalg import inv, det, eig, svd, norm
 # Create a 1-dimensional NumPy array
 array_1d = np.array([1, 2, 3, 4, 5])
 print("1D Array:", array_1d)
@@ -87,3 +88,30 @@ print("Dot Product:", dot_product)
 c = np.array([[10, 20, 30],[40, 50, 60]])
 d=np.array([1, 2, 3])
 print("Broadcasting Addition:", c + d)
+
+
+# Linear Algebra Operations(core Ml mathematics)
+# first of all linalg module is imported --> from numpy.linalg import inv, det, eig, svd, norm
+C= np.array([[1, 2], [3, 4]])
+print(inv(C))  # Inverse of a matrix
+print(det(C)) # Determinant of a matrix
+print(eig(C)) # Eigenvalues and eigenvectors of a matrix
+print(svd(C)) # Singular Value Decomposition of a matrix
+print("Vector norm:", norm(C))  # Vector norm
+
+
+#statistics
+data = np.random.randn(100)  # Generate random data
+print("Mean:", np.mean(data))           # Mean
+print("Median:", np.median(data))       # Median
+print("Standard Deviation:", np.std(data))  # Standard Deviation
+print("Variance:", np.var(data))        # Variance
+print("25th Percentile:", np.percentile(data, 25))  # 25th Percentile
+
+
+# Reshaping and Resizing
+arr_reshaped = np.arange(24).reshape(8,3)
+print("Reshaped Array:\n", arr_reshaped)
+print("Converted to 1D Array:", arr_reshaped.flatten())
+
+
